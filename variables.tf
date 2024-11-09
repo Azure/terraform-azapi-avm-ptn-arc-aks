@@ -60,6 +60,8 @@ variable "agent_pool_profiles" {
 variable "control_plane_ip" {
   type        = string
   description = "The ip address of the control plane"
+  default = null
+  nullable = true
 }
 
 variable "custom_location_id" {
@@ -285,4 +287,16 @@ variable "tenant_id" {
   type        = string
   default     = ""
   description = "(Optional) Value of the tenant id"
+}
+
+variable "enable_workload_identity" {
+  type = bool
+  default = false
+  description = "(Optional) Enable Workload Identity"
+}
+
+variable "enable_oidc_issuer" {
+  type = bool
+  default = false
+  description = "(Optional) Enable OIDC Issuer"
 }
